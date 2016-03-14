@@ -125,6 +125,13 @@ request.defaults = function (options, requester) {
   return defaults
 }
 
+request.session = function(store) {
+  var jar = request.jar(store);
+  var options = {jar: jar};
+  session = request.defaults(options);
+  return session;
+}
+
 request.forever = function (agentOptions, optionsArg) {
   var options = {}
   if (optionsArg) {
