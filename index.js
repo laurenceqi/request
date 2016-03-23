@@ -128,7 +128,7 @@ request.defaults = function (options, requester) {
 request.session = function(store) {
   var jar = request.jar(store);
   var options = {jar: jar};
-  session = request.defaults(options);
+  var session = request.defaults(options);
   return session;
 }
 
